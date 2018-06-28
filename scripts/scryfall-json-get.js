@@ -3,8 +3,6 @@ const fetch = require('node-fetch');
 const fs = require('fs-extra');
 const path = require('path');
 
-let fullData = [];
-
 const cardsDir = path.resolve(__dirname, 'cards');
 const jsonPath = path.resolve(__dirname, 'cardsTable.json');
 // Ensure cards lookup table is new
@@ -20,7 +18,6 @@ const fetcher = async (fetchUrl) => {
   const val = await fetch(fetchUrl);
   const jsonData = await val.json();
   const { has_more, next_page, data } = jsonData;
-  fullData = fullData.concat(data);
 
   data.forEach((card) => {
     if (card.lang === 'en') {
