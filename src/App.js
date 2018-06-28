@@ -27,7 +27,7 @@ class App extends Component {
   }
 }
 
-App.childContextTypes = { notify: PropTypes.func }
+App.childContextTypes = { notify: PropTypes.func };
 
 // Function to map the redux state to object properties
 const mapStateToProps = () => ({});
