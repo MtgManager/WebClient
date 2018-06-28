@@ -31,11 +31,11 @@ const fetcher = async (fetchUrl) => {
     }
   });
 
-  // if (has_more) {
-  //   fetcher(next_page);
-  // } else {
+  if (has_more) {
+    fetcher(next_page);
+  } else {
     fs.appendFileSync(jsonPath, '}');
-  // }
+  }
 };
 
 fetcher('https://api.scryfall.com/cards?page=1');
